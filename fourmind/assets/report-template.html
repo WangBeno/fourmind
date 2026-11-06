@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 【填】标题：FourMind 决策报告 · 用户要决定的事 -->
+<title>FourMind 决策报告 · 留下等、去跨境，还是开抖音小店</title>
+<!-- 样式整段原样保留，不要改 -->
+<style>
+:root{--paper:#f4f1ea;--card:#fffdf8;--ink:#1d1c1a;--muted:#6e685d;--line:#e2dccf;--hl:#ffd84d;
+--jobs:#2b2b2b;--jobs-l:#ecebe7;--musk:#2f5b86;--musk-l:#e2eaf3;--buffett:#2e7d5b;--buffett-l:#e1f0e8;--wang:#c8432b;--wang-l:#f8e4dc;
+--ok:#2e7d5b;--ok-l:#e3f1e9;--warn:#a86a12;--warn-l:#fbf0d8;--bad:#b3261e;--bad-l:#fbe3e0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:40px 24px 64px}
+mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;padding:0 2px}
+.kicker{font:700 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+h1{font-size:30px;line-height:1.35;font-weight:900;margin:14px 0 22px}
+h2{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:900;margin:56px 0 18px}
+h2 .no{font:800 13px/1 ui-monospace,Menlo,monospace;color:#fff;background:var(--ink);border-radius:6px;padding:6px 8px}
+.verdict{background:var(--ink);color:#fff;border-radius:18px;padding:26px 28px;position:relative;overflow:hidden}
+.verdict .lab{font-size:13px;font-weight:700;color:var(--hl);letter-spacing:.1em}
+.verdict p{font-size:21px;line-height:1.6;font-weight:800;margin-top:8px}
+.verdict mark{background:var(--hl);color:var(--ink);border-radius:4px;padding:1px 6px}
+.verdict .pre{font-size:14px;color:#cfc9bd;font-weight:500;margin-top:12px}
+.assume{font-size:13px;color:var(--muted);margin-top:14px}
+.av{position:relative;flex:none;width:64px;height:64px;border-radius:50%;background:var(--c);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.12);overflow:hidden}
+.av b{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:26px;font-weight:900}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.av.s{width:40px;height:40px;border-width:2px}.av.s b{font-size:17px}
+.jobs{--c:var(--jobs);--l:var(--jobs-l)}.musk{--c:var(--musk);--l:var(--musk-l)}.buffett{--c:var(--buffett);--l:var(--buffett-l)}.wang{--c:var(--wang);--l:var(--wang-l)}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.adv{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.adv .top{background:var(--l);border-top:6px solid var(--c);padding:18px 20px 16px;display:flex;gap:14px;align-items:center}
+.adv .who{font-weight:900;font-size:18px}.adv .tag{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--c);border-radius:99px;padding:2px 10px;margin-left:6px;vertical-align:2px}
+.adv .one{font-size:17px;font-weight:800;line-height:1.5;margin-top:4px}
+.adv .body{padding:16px 20px 20px;display:grid;gap:12px;flex:1}
+.adv h4{font-size:12px;letter-spacing:.08em;color:var(--c);font-weight:800;margin-bottom:2px}
+.adv .body p{font-size:15px}
+.ask{background:var(--l);border-left:4px solid var(--c);border-radius:0 10px 10px 0;padding:10px 14px;font-weight:700;font-size:15px}
+.src{font-size:13px;color:var(--muted)}
+.roundrow{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:stretch}
+.seats{background:var(--card);border:1px solid var(--line);border-radius:18px;display:grid;place-items:center;padding:18px}
+.round{position:relative;width:240px;height:240px}
+.round .disk{position:absolute;inset:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#efe9dc);border:2px solid var(--line);display:grid;place-items:center;text-align:center;font-weight:900;font-size:16px;color:var(--muted)}
+.round .av{position:absolute;width:64px;height:64px}
+.round .p1{left:88px;top:0}.round .p2{right:0;top:88px}.round .p3{left:88px;bottom:0}.round .p4{left:0;top:88px}
+.block{border-radius:14px;padding:16px 18px;font-size:15px}
+.block .lab{font-size:13px;font-weight:900;letter-spacing:.06em;margin-bottom:6px}
+.ok{background:var(--ok-l)}.ok .lab{color:var(--ok)}.warn{background:var(--warn-l)}.warn .lab{color:var(--warn)}.bad{background:var(--bad-l)}.bad .lab{color:var(--bad)}
+.roundrow .block{border-radius:18px;padding:20px 22px}
+.pts{list-style:none;display:grid;gap:10px}
+.pts li{padding-left:26px;position:relative}
+.pts li:before{content:"✓";position:absolute;left:2px;top:0;font-weight:900;color:var(--ok)}
+.pts b{display:block}
+.debate{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;display:grid;gap:12px;margin-top:16px}
+.debate .vs{font-weight:900;font-size:16px}.debate .vs span{font-weight:500;font-size:14px;color:var(--muted);margin-left:8px}
+.msg{display:flex;gap:10px;align-items:flex-start}.msg.r{flex-direction:row-reverse}
+.msg .bub{background:var(--l);border-radius:14px;padding:10px 14px;font-size:15px;max-width:72%}
+.msg .bub i{font-style:normal;font-weight:800;color:var(--c);display:block;font-size:12px}
+.others{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.other{background:var(--l);border-radius:16px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.other b{display:block;color:var(--c);font-size:13px;margin-bottom:2px}
+.final{background:var(--ink);color:#fff;border-radius:18px;padding:20px 22px;margin-top:16px}
+.final .lab{color:var(--hl);font-size:13px;font-weight:900;letter-spacing:.06em}
+.final p{font-weight:700;font-size:16px}
+.listen{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.listen div{background:rgba(255,255,255,.08);border-top:4px solid var(--c);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.6}
+.listen div i{font-style:normal;font-weight:900;display:block;font-size:12px;color:#fff;opacity:.75}
+.jobs.lis{--c:#9a9a9a}
+.reframe{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.reframe .core{font-size:18px;font-weight:800;line-height:1.6}
+.reframe .why{font-size:15px;color:var(--muted);margin-top:6px}
+.reframe .qa{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.reframe .old,.reframe .new{border-radius:12px;padding:12px 14px;font-size:15px}
+.reframe .old{background:#efebe3;color:var(--muted)}.reframe .old s{text-decoration-thickness:2px}
+.reframe .new{background:var(--hl);font-weight:800}
+.reframe small{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;opacity:.7}
+.mx-wrap{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-top:16px;overflow-x:auto}
+.mx{width:100%;min-width:680px;border-collapse:collapse;font-size:14px}
+.mx th{font-size:12px;font-weight:800;text-align:left;padding:8px 10px;border-bottom:2px solid var(--ink);white-space:nowrap}
+.mx td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+.mx td:first-child{font-weight:800;white-space:nowrap}
+.mx .y,.mx .m,.mx .n{display:inline-block;width:20px;height:20px;border-radius:50%;text-align:center;line-height:20px;font-size:12px;font-weight:900;color:#fff;margin-right:6px}
+.mx .y{background:var(--ok)}.mx .m{background:var(--warn)}.mx .n{background:var(--bad)}
+.mx tr.pick td{background:var(--ok-l)}.mx tr.pick td:first-child{color:var(--ok)}
+.mx .end{font-weight:800}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.items{list-style:none;display:grid;gap:14px;counter-reset:i}
+.items li{counter-increment:i;padding-left:30px;position:relative}
+.items li:before{content:counter(i);position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:currentColor;font-size:12px;font-weight:900;line-height:20px;text-align:center}
+.warn .items li:before{background:var(--warn);color:#fff}.bad .items li:before{background:var(--bad);color:#fff}
+.items b{display:block;font-size:15px}
+.items p{font-size:14px;margin-top:2px}
+.items .do{font-size:14px;margin-top:4px;font-weight:700}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.num{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.num b{display:block;font-size:30px;font-weight:900;line-height:1.1}
+.num span{display:block;font-size:13px;margin-top:4px}
+.num em{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
+.advice{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:16px}
+.advice p{font-size:16px}
+.notwhy{list-style:none;display:grid;gap:6px;margin-top:14px;font-size:15px}
+.notwhy li{padding-left:24px;position:relative}
+.notwhy li:before{content:"✕";position:absolute;left:2px;color:var(--bad);font-weight:900}
+.one-line{margin-top:16px;background:var(--hl);border-radius:12px;padding:14px 16px;font-size:18px;font-weight:900}
+.timeline{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:34px}
+.timeline:before{content:"";position:absolute;left:26px;right:8px;top:12px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--ink),var(--line))}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.step:before{content:"";position:absolute;top:-30px;left:18px;width:16px;height:16px;border-radius:50%;background:var(--ink);border:4px solid var(--paper)}
+.step .when{font-size:20px;font-weight:900}.step .date{font-size:13px;color:var(--muted);margin-left:6px}
+.step ul{list-style:none;margin-top:8px;display:grid;gap:8px}
+.step li{font-size:15px;padding-left:22px;position:relative}
+.step li:before{content:"";position:absolute;left:2px;top:7px;width:12px;height:12px;border:2px solid var(--ink);border-radius:3px}
+.step .goal{margin-top:10px;font-size:14px;background:var(--ok-l);border-radius:10px;padding:8px 12px}
+.review{margin-top:12px;font-size:13px;border-top:1px dashed var(--line);padding-top:10px;color:var(--muted)}
+.review b{color:var(--ink)}
+.stops{margin-top:18px;background:var(--bad-l);border-radius:16px;padding:18px 20px}
+.stops .lab{color:var(--bad);font-weight:900;font-size:15px}
+.stops ol{margin:8px 0 0 20px;display:grid;gap:6px;font-size:15px}
+.foot{margin-top:48px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:760px){.wrap{padding:28px 16px 48px}h1{font-size:24px}.verdict p{font-size:18px}
+.grid4,.two,.reframe .qa,.timeline{grid-template-columns:1fr}.listen{grid-template-columns:1fr 1fr}.nums{grid-template-columns:1fr 1fr}
+.roundrow,.others,.listen{grid-template-columns:1fr}.msg .bub{max-width:84%}.timeline:before{display:none}.step:before{display:none}}
+</style>
+</head>
+<body><div class="wrap">
+
+<!-- ===== 顶部：问题 + 一句话结论 ===== -->
+<div class="kicker">FourMind 决策报告 · 2026-11-06</div>
+<h1>留下等、去跨境公司，还是自己开抖音小店？</h1>
+<div class="verdict">
+  <div class="lab">一句话结论</div>
+  <p>不去跨境，也先不辞职。从这周起下班做抖音小店，<mark>投入封顶 5 万</mark>；3 月前后被裁就拿着 12 万补偿转全职，没被裁就等小店数据过线再走。</p>
+  <div class="pre">前提：不踩现公司的合同红线。</div>
+</div>
+<div class="assume">我先假设：天猫店 800 多万是年销售额；家用"6000 多"按 6500 算；抖音小店净利率按 10% 算。</div>
+
+<!-- ===== 第一部分：四位顾问 ===== -->
+<h2><span class="no">01</span>四位顾问的分析</h2>
+<div class="grid4">
+
+  <section class="adv jobs">
+    <div class="top">
+      <span class="av"><b>乔</b><img src="jobs.jpg" alt=""></span>
+      <div><div class="who">乔布斯<span class="tag">取舍</span></div>
+      <div class="one">先砍跨境：工资当底盘，小店当主线，3 月是终点。</div></div>
+    </div>
+    <div class="body">
+      <div><h4>他看到的问题</h4><p>你真想要的只有两样：一份有底的收入，和一个不会被别人拿走的饭碗。跨境两样都给不了：月薪少 3000，6 年积累归零，理由只是"听说在涨"。</p></div>
+      <div><h4>他的建议</h4><p>小店只做最有把握的 3～5 款收纳品。"下班做"只能当过渡，必须设终点。</p></div>
+      <div class="ask">把跨境这条路划掉，你是松了一口气，还是心疼？</div>
+      <div class="src">1997 年他回苹果，砍掉约七成产品线才活下来。</div>
+    </div>
+  </section>
+
+  <section class="adv musk">
+    <div class="top">
+      <span class="av"><b>马</b><img src="musk.jpg" alt=""></span>
+      <div><div class="who">马斯克<span class="tag">拆底层</span></div>
+      <div class="one">天猫的本事能不能搬到抖音，用 1 万块、两周验证。</div></div>
+    </div>
+    <div class="body">
+      <div><h4>他看到的问题</h4><p>事实：你管过年销 800 多万的天猫店，拿货价低 15%。假设：这些能原样搬到抖音。天猫靠搜索，抖音靠内容和投流，你没在抖音卖过货。</p></div>
+      <div><h4>他的建议</h4><p>两周内、1 万元以内，亲自把第一批货卖出去。只盯三个数：投 1 元换回多少销售额、退货率、单均净利。</p></div>
+      <div class="ask">那 15% 的价差，扣完退货、平台费、投流，还剩几个点？</div>
+    </div>
+  </section>
+
+  <section class="adv buffett">
+    <div class="top">
+      <span class="av"><b>巴</b><img src="buffett.jpg" alt=""></span>
+      <div><div class="who">巴菲特<span class="tag">算长远、守底线</span></div>
+      <div class="one">被裁你扛得住，主动辞职才是亲手丢掉 12 万。</div></div>
+    </div>
+    <div class="body">
+      <div><h4>他看到的问题</h4><p>最坏是 3 月被裁：补偿加存款共 42 万，老婆月薪 1 万，每月缺口约 6500，撑得住好几年。出局的风险不在被裁，在你主动跳槽或辞职。</p></div>
+      <div><h4>他的建议</h4><p>5 万分三步投：先 1 万，过线再投 2 万，仍过线才动最后 2 万。补偿到手前，不主动提离职。</p></div>
+      <div class="ask">这 5 万亏光了，家里的房贷和孩子的生活会变吗？</div>
+      <div class="src">1998 年他批评过：拿已经有、而且需要的东西去冒险，很蠢。</div>
+    </div>
+  </section>
+
+  <section class="adv wang">
+    <div class="top">
+      <span class="av"><b>王</b><img src="wangyangming.jpg" alt=""></span>
+      <div><div class="who">王阳明<span class="tag">问本心</span></div>
+      <div class="one">你偏向开店，却停在"想过"。先动手。</div></div>
+    </div>
+    <div class="body">
+      <div><h4>他看到的问题</h4><p>你说"心里其实偏向开店"，接着是"最怕把钱亏了"；说"下班开店我想过"，后面是"就是怕忙不过来"。想过却没动手，别扭点就在这里。</p></div>
+      <div><h4>他的建议</h4><p>本周向两家工厂要样品，晚上自己上架第一款。做的时候你会知道，自己是兴奋还是勉强。</p></div>
+      <div class="ask">如果领导明天说绝对不裁员，你还想开这家店吗？</div>
+      <div class="src">"知而不行，只是未知。"——《传习录》</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== 第二部分：圆桌讨论 ===== -->
+<h2><span class="no">02</span>圆桌讨论</h2>
+<div class="roundrow">
+  <div class="seats">
+    <div class="round">
+      <div class="disk">圆桌</div>
+      <span class="av jobs p1"><b>乔</b><img src="jobs.jpg" alt=""></span>
+      <span class="av musk p2"><b>马</b><img src="musk.jpg" alt=""></span>
+      <span class="av buffett p3"><b>巴</b><img src="buffett.jpg" alt=""></span>
+      <span class="av wang p4"><b>王</b><img src="wangyangming.jpg" alt=""></span>
+    </div>
+  </div>
+  <div class="block ok">
+    <div class="lab">四个人的共识</div>
+    <ul class="pts">
+      <li><b>跨境现在不值得跳</b>降薪 3000、6 年积累清零，换来的只是一句"听说在涨"。</li>
+      <li><b>主动辞职是眼下最贵的一步</b>等于亲手丢掉约 12 万补偿和每月 1.8 万工资。</li>
+      <li><b>小店要试，但只拿亏得起的钱试</b>5 万封顶、分批投，亏光了家里的日子也不受影响。</li>
+    </ul>
+  </div>
+</div>
+
+<div class="debate">
+  <div class="vs">分歧：乔布斯 vs 巴菲特<span>争的是：要不要现在就全职做店</span></div>
+  <div class="msg jobs"><span class="av s"><b>乔</b><img src="jobs.jpg" alt=""></span><div class="bub"><i>乔布斯</i>下班那点零碎时间做不透。真要做就现在辞职，全职干一年看结果。</div></div>
+  <div class="msg r buffett"><span class="av s"><b>巴</b><img src="buffett.jpg" alt=""></span><div class="bub"><i>巴菲特</i>现在辞职，是主动丢掉 12 万补偿和每月 1.8 万。店还没卖出第一单，你拿什么换这些？</div></div>
+  <div class="msg jobs"><span class="av s"><b>乔</b><img src="jobs.jpg" alt=""></span><div class="bub"><i>乔布斯</i>每周十几个小时，内容和投流都做不够，测出来的数据不准，最后只会得出一个"不行"的假结论。</div></div>
+  <div class="msg r buffett"><span class="av s"><b>巴</b><img src="buffett.jpg" alt=""></span><div class="bub"><i>巴菲特</i>那就把试验压短、压准：只做 3～5 款，每周固定 12 小时，三个月看结果。数据不完美，也比拿全家的钱去赌强。</div></div>
+  <div class="msg jobs"><span class="av s"><b>乔</b><img src="jobs.jpg" alt=""></span><div class="bub"><i>乔布斯</i>可以，但必须有终点。没有期限的副业，最后都会变成"永远在试"。</div></div>
+  <div class="msg r buffett"><span class="av s"><b>巴</b><img src="buffett.jpg" alt=""></span><div class="bub"><i>巴菲特</i>同意。3 月就是终点：那时被裁就全职，没被裁就看数字说话。</div></div>
+</div>
+
+<div class="others">
+  <div class="other musk"><span class="av s"><b>马</b><img src="musk.jpg" alt=""></span><div><b>马斯克怎么看</b>时间多少不是关键，关键是"天猫的本事能不能搬到抖音"。先用 1 万块测出投 1 元能换回多少销售额，这个数决定该听谁的。</div></div>
+  <div class="other wang"><span class="av s"><b>王</b><img src="wangyangming.jpg" alt=""></span><div><b>王阳明怎么看</b>我更在意你为什么一直停在"想过"。如果是怕，全职了也会怕；先亲手卖出第一单，心里的慌自然少一半。</div></div>
+</div>
+
+<div class="final">
+  <div class="lab">圆桌结论</div>
+  <p>下班做店、5 万封顶、明年 3 月为期限。被裁时小店月净利过 3000 就全职冲，不到就用补偿撑着找工作；没被裁，月净利连续三个月过 1 万才主动走。</p>
+  <div class="listen">
+    <div class="jobs lis"><i>听乔布斯的</i>终点定在 3 月，只做 3～5 款</div>
+    <div class="musk"><i>听马斯克的</i>先用 1 万块测出投产比</div>
+    <div class="buffett"><i>听巴菲特的</i>5 万分三批投，不主动辞职</div>
+    <div class="wang"><i>听王阳明的</i>这周就动手，卖出第一单</div>
+  </div>
+</div>
+
+<!-- ===== 第三部分：综合分析与建议 ===== -->
+<h2><span class="no">03</span>综合分析与建议</h2>
+<div class="reframe">
+  <div class="lab kicker">问题本质</div>
+  <p class="core" style="margin-top:8px">你卡在"想要一个<mark>不会被别人拿走的饭碗</mark>"和"不想拿全家的钱去赌"之间。</p>
+  <p class="why">三条路看起来是三个选项，其实都在回答同一个问题：离开这家公司，你能不能靠自己赚到钱。这个问题没验证之前，选哪条都是在猜。</p>
+  <div class="qa">
+    <div class="old"><small>别再问</small><s>三条路我该选哪条？</s></div>
+    <div class="new"><small>该问的是</small>我用多少钱、多长时间，验证自己离开公司也能赚钱？</div>
+  </div>
+</div>
+
+<div class="mx-wrap">
+  <div class="lab kicker" style="margin-bottom:8px">选项对比：四个角度逐条过</div>
+  <table class="mx">
+    <tr><th>选项</th><th>乔布斯｜取舍</th><th>马斯克｜事实</th><th>巴菲特｜底线</th><th>王阳明｜本心</th><th>结论</th></tr>
+    <tr><td>留下来等</td><td><span class="m">△</span>有底盘，没主线</td><td><span class="n">✕</span>什么都没验证</td><td><span class="y">✓</span>保住 12 万</td><td><span class="n">✕</span>只是在躲</td><td class="end">不单独选</td></tr>
+    <tr><td>去跨境公司</td><td><span class="n">✕</span>积累清零</td><td><span class="n">✕</span>"在涨"是听说</td><td><span class="m">△</span>多亏 15.6 万</td><td><span class="n">✕</span>不是你想要的</td><td class="end">不选</td></tr>
+    <tr><td>现在辞职开店</td><td><span class="y">✓</span>够聚焦</td><td><span class="n">✕</span>抖音没跑过</td><td><span class="n">✕</span>丢掉补偿和工资</td><td><span class="y">✓</span>是你偏向的</td><td class="end">太早</td></tr>
+    <tr class="pick"><td>下班做店（推荐）</td><td><span class="y">✓</span>主线清楚</td><td><span class="y">✓</span>小钱验证</td><td><span class="y">✓</span>底线守住</td><td><span class="y">✓</span>马上动手</td><td class="end">推荐</td></tr>
+  </table>
+</div>
+
+<div class="two">
+  <div class="block warn">
+    <div class="lab">被忽略的关键点</div>
+    <ol class="items">
+      <li><b>同业竞争可能让你丢掉补偿</b><p>公司做家居，你也卖家居。用了公司的供应商，可能被认定同业竞争，12 万补偿可能就没了。</p><div class="do">→ 先查合同和员工手册，和公司有往来的工厂一律不用。</div></li>
+      <li><b>"被裁"不一定拿得到 N+1</b><p>裁员时公司可能让你签"自愿离职"或"协商解除"，名义不同，补偿差很多。</p><div class="do">→ 被约谈时先不签字，问清补偿怎么算，必要时问劳动法律师。</div></li>
+    </ol>
+  </div>
+  <div class="block bad">
+    <div class="lab">最危险的误区</div>
+    <ol class="items">
+      <li><b>把"供应链熟"当成"能赚钱"</b><p>抖音上不缺货，缺的是流量和转化，这一环你没亲手跑过。</p><div class="do">最早的信号：出够 100 单后，单均净利还是负的。</div></li>
+      <li><b>被"35 岁焦虑"推着一步迈太大</b><p>你离 35 岁还有 3 年，足够先验证再决定。被怕推出来的决定，往往一步迈得太大。</p><div class="do">最早的信号：数据还没出来，你已经在想"干脆辞了全力做"。</div></li>
+    </ol>
+  </div>
+</div>
+
+<div class="nums">
+  <div class="num"><b>42 万</b><span>被裁后的家底</span><em>12 万补偿 + 30 万存款</em></div>
+  <div class="num"><b>6500</b><span>被裁后每月缺口</span><em>开销 1.5 万 + 社保 1500 − 老婆 1 万</em></div>
+  <div class="num"><b>15.6 万</b><span>现在跳槽比等到 3 月多亏的钱</span><em>12 万补偿 + 3000 × 12 个月</em></div>
+  <div class="num"><b>18 万</b><span>小店月销到这个数，才顶得上工资</span><em>1.8 万 ÷ 10% 净利率</em></div>
+</div>
+
+<div class="advice">
+  <div class="lab kicker">最终建议</div>
+  <p style="margin-top:8px">跨境不去，开店要试，但别用辞职去试。乔布斯砍掉了跨境，它既没有你的积累，也不是你想要的；巴菲特算清了家底，被裁后每月缺口也只有六千多，真正该守的是那 12 万补偿和每月 1.8 万；马斯克提醒你，货源便宜只是假设，要用小钱把净利跑出来；王阳明看出你偏向开店，却停在"想过"。你怕的 35 岁和赔光存款，在这个安排里都被压到了扛得住的范围。</p>
+  <ul class="notwhy">
+    <li>不只是留下来等：钱保住了，但三个月后你还是什么都没验证。</li>
+    <li>不去跨境：降薪又清零，换来的只是一句听说。</li>
+    <li>不现在辞职：等于花 12 万补偿加几个月工资，去买一个本可以用 1 万块验证的答案。</li>
+  </ul>
+  <div class="one-line">如果只记住一句话：先用 5 万以内、三个月把店跑出数字，再决定要不要放下那份工资。</div>
+</div>
+
+<!-- ===== 第四部分：执行计划 ===== -->
+<h2><span class="no">04</span>执行计划</h2>
+<div class="timeline">
+  <div class="step">
+    <div class="when">7 天内<span class="date">到 11 月 13 日</span></div>
+    <ul>
+      <li>回绝跨境公司，留作备选</li>
+      <li>查合同里的竞业、保密条款，问清工厂和公司有没有往来</li>
+      <li>两家工厂各要 3 款样品，账期写成书面</li>
+      <li>和老婆定好 5 万封顶和止损线</li>
+    </ul>
+    <div class="review"><b>复盘看：</b>以上四件做没做，合同有没有红线</div>
+  </div>
+  <div class="step">
+    <div class="when">30 天内<span class="date">到 12 月 6 日</span></div>
+    <ul>
+      <li>上架 3～5 款，每周固定约 12 小时</li>
+      <li>先拿 1 万试投流，每天记销售额和花费</li>
+    </ul>
+    <div class="goal">要看到：100 单、单均净利为正、日销 ≥ 500 元</div>
+    <div class="review"><b>复盘看：</b>做到了再加 2 万，没做到不加钱</div>
+  </div>
+  <div class="step">
+    <div class="when">3 个月<span class="date">到 2 月底</span></div>
+    <ul>
+      <li>汇总小店三个月的数字</li>
+      <li>按圆桌结论备好"被裁 / 没被裁"两套方案</li>
+    </ul>
+    <div class="goal">要看到：月净利过 3000，才保留全职方案</div>
+  </div>
+</div>
+<div class="stops">
+  <div class="lab">⛔ 止损线：碰到就停，不许临时改口</div>
+  <ol>
+    <li>累计净亏损到 3 万，立刻停投</li>
+    <li>2 月底小店月净利不到 3000，全职方案作废，被裁后先找工作</li>
+    <li>公司因小店找你谈话，或让你签"自愿离职"：先停小店、不签字，找劳动法律师</li>
+  </ol>
+</div>
+
+<div class="foot">到了复盘的时间，把"一句话结论"和"执行计划"发回给 FourMind，说"复盘"。<br>本报告由 AI 按乔布斯、马斯克、巴菲特、王阳明公开讲过的方法推演，不是他们本人的话；头像为漫画形象。最后的决定由你自己做。</div>
+
+</div></body>
+</html>
